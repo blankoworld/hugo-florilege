@@ -6,7 +6,7 @@ Originally derived from the `base` theme of
 [Quinoa](https://github.com/blankoworld/quinoa), a static blog engine written
 in Lua — Florilège carries over its look and brings it to Hugo.
 
-![Homepage with hugo-florilege hugo theme](https://github.com/blankoworld/hugo-florilege/images/screenshot.png)
+![Homepage with hugo-florilege hugo theme](https://raw.githubusercontent.com/blankoworld/hugo-florilege/dev/images/screenshot.png)
 
 ## Installation
 
