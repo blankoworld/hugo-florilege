@@ -327,13 +327,61 @@ footer#footer p {
     text-shadow: none !important;
   }
 
+  html {
+    font-size: 14px;
+  }
+
   body {
     max-width: 100%;
+    padding: 0.5rem 0.75rem;
+    line-height: 1.25;
+  }
+
+  header {
+    margin-bottom: 0.5rem;
+  }
+
+  hr {
+    border-top: 1px solid #000;
+    margin: 0.5rem 0;
   }
 
   article.post {
-    border: 1px solid #ccc;
+    margin-bottom: 0.5rem;
+    padding: 0;
     page-break-inside: avoid;
+  }
+
+  article.post p {
+    margin: 0 0 0.3rem;
+  }
+
+  article.post p.meta {
+    text-align: left;
+    font-style: italic;
+  }
+
+  /* Short separator between thoughts, instead of a full-width rule */
+  article.post:not(:last-child)::after,
+  p.quote:not(:last-child)::after {
+    content: "";
+    display: block;
+    width: 40%;
+    margin: 0.4rem 0;
+    border-top: 2px solid #000;
+  }
+
+  /* Drop the colored category square, print its real name instead */
+  .type a {
+    display: inline;
+    width: auto;
+    height: auto;
+    margin-bottom: 0;
+  }
+
+  .type a::before {
+    content: attr(title);
+    font-weight: bold;
   }
 
   a,
