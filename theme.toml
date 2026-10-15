@@ -1,0 +1,12 @@
+name = "Florilège"
+license = "MIT"
+licenselink = "https://github.com/blankoworld/hugo-florilege/blob/master/LICENSE"
+description = "A clean Hugo theme for collections of quotes and short thoughts, with colored category badges. Adapted from Quinoa's 'base' theme, the Lua-based static blog engine."
+homepage = "https://github.com/blankoworld/hugo-florilege"
+tags = ["blog", "minimal", "quotes", "multilingual", "microblog"]
+features = ["tags", "categories", "rss", "pagination"]
+min_version = "0.158.0"
+
+[author]
+  name = "Olivier DOSSMANN"
+  homepage = "https://olivier.dossmann.net"

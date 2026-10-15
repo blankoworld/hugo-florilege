@@ -1,0 +1,21 @@
+{{ define "bodyclass" }}{{ if eq .Kind "term" }}single{{ else }}tags{{ end }}{{ end }}
+{{ define "main" }}
+  {{ if eq .Kind "term" }}
+    {{ $label := .Data.Term | humanize }}
+    {{ if eq .Data.Plural "categories" }}
+      {{ with index hugo.Data.categories .Data.Term }}{{ with .label }}{{ $label = . }}{{ end }}{{ end }}
+    {{ end }}
+    <h2>{{ $label }}</h2>
+    {{ range .Paginator.Pages }}
+      {{ partial "article-line.html" . }}
+    {{ end }}
+    {{ partial "pagination.html" . }}
+  {{ else }}
+    <h2 id="tags">{{ T "tags" }}</h2>
+    <ul>
+      {{ range .Pages.ByTitle }}
+      <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  {{ end }}
+{{ end }}

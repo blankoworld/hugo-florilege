@@ -1,0 +1,9 @@
+{{ define "bodyclass" }}single{{ end }}
+{{ define "main" }}
+  {{ if eq .Type "posts" }}
+    {{ partial "article-full.html" . }}
+  {{ else }}
+    {{ with .Title }}<h3>{{ . }}</h3>{{ end }}
+    {{ .Content }}
+  {{ end }}
+{{ end }}

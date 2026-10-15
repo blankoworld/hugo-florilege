@@ -1,0 +1,24 @@
+<aside id="sidebar">
+
+  {{ with site.Params.sidebar }}
+  {{ . | markdownify }}
+  {{ end }}
+
+  {{ if site.Taxonomies.categories }}
+  <h2>{{ T "legend" }}</h2>
+
+  <div id="legend">
+    {{ range site.Taxonomies.categories.Alphabetical }}
+    {{ $slug := .Name }}
+    {{ $catData := index hugo.Data.categories $slug }}
+    {{ $label := $slug | humanize }}
+    {{ $color := "" }}
+    {{ with $catData }}{{ with .label }}{{ $label = . }}{{ end }}{{ with .color }}{{ $color = . }}{{ end }}{{ end }}
+    <div>
+      <a href="{{ "/categories/" | relURL }}{{ $slug }}/"><span class="swatch"{{ with $color }} style="background-color: {{ . }}"{{ end }}></span>{{ $label }}</a>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+
+</aside>

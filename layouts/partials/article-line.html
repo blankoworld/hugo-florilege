@@ -1,0 +1,8 @@
+{{ $cat := "" }}
+{{ with .Params.categories }}{{ $cat = index . 0 }}{{ end }}
+{{ $catData := "" }}
+{{ with $cat }}{{ $catData = index hugo.Data.categories . }}{{ end }}
+{{ $color := "" }}
+{{ $label := $cat }}
+{{ with $catData }}{{ with .color }}{{ $color = . }}{{ end }}{{ with .label }}{{ $label = . }}{{ end }}{{ end }}
+<p class="quote">{{ .Date.Format "2006/01/02" }} - <span class="type {{ $cat }}"><a href="{{ "/categories/" | relURL }}{{ $cat }}/" title="{{ $label }}"{{ with $color }} style="background-color: {{ . }}"{{ end }}> </a></span> - <a href="{{ .Permalink }}">#{{ .File.ContentBaseName }}</a> - {{ .Params.author | default site.Params.author }} - {{ with .Params.tags }}{{ T "tags" }}&#8239;: {{ range $i, $tag := . }}{{ if $i }}, {{ end }}<a href="{{ "/tags/" | relURL }}{{ $tag | urlize }}/">{{ $tag }}</a>{{ end }}{{ end }}</p>

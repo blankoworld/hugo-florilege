@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ site.Language.Lang }}">
+{{ partial "head.html" . }}
+<body class="{{ block "bodyclass" . }}default{{ end }}">
+
+  <nav id="main" aria-label="{{ T "quickAccess" }}">
+    <ol>
+      <li><a href="{{ site.BaseURL }}">{{ T "home" }}</a></li>
+      <li><a href="#content">{{ T "content" }}</a></li>
+      <li><a href="#nav">{{ T "navigation" }}</a></li>
+      <li><a href="#footer">{{ T "footer" }}</a></li>
+    </ol>
+  </nav>
+
+  <header>
+    <h1><a href="{{ site.BaseURL }}">{{ site.Title }}</a></h1>
+    {{ with site.Params.subtitle }}<p id="subtitle">{{ . }}</p>{{ end }}
+  </header>
+
+  {{ with site.Params.introduction }}
+  <div id="introduction">
+    {{ . | markdownify }}
+  </div>
+  {{ end }}
+
+  {{ partial "nav.html" . }}
+  <hr id="nav-separator">
+
+  <div id="content">
+    {{ block "main" . }}{{ end }}
+  </div>
+
+  {{ partial "sidebar.html" . }}
+
+  {{ partial "footer.html" . }}
+
+</body>
+</html>

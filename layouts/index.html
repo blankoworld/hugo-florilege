@@ -1,0 +1,9 @@
+{{ define "bodyclass" }}home{{ end }}
+{{ define "main" }}
+  {{ $posts := where site.RegularPages "Type" "posts" }}
+  {{ $paginator := .Paginate $posts }}
+  {{ range $paginator.Pages }}
+    {{ partial "article-full.html" . }}
+  {{ end }}
+  {{ partial "pagination.html" . }}
+{{ end }}

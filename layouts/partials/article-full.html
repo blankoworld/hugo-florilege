@@ -1,0 +1,16 @@
+{{ $cat := "" }}
+{{ with .Params.categories }}{{ $cat = index . 0 }}{{ end }}
+{{ $catData := "" }}
+{{ with $cat }}{{ $catData = index hugo.Data.categories . }}{{ end }}
+{{ $color := "" }}
+{{ $label := $cat }}
+{{ with $catData }}{{ with .color }}{{ $color = . }}{{ end }}{{ with .label }}{{ $label = . }}{{ end }}{{ end }}
+<article class="post {{ $cat }}" id="post-{{ .File.ContentBaseName }}">
+  {{ with $cat }}<div class="type {{ . }}"><a href="{{ "/categories/" | relURL }}{{ . }}/" title="{{ $label }}"{{ with $color }} style="background-color: {{ . }}"{{ end }}> </a></div>{{ end }}
+
+  {{ .Content }}
+
+  <footer>
+    <p class="meta">{{ .Params.author | default site.Params.author }} ⋅ {{ time.Format "2 January 2006" .Date }}{{ with .Params.tags }} ⋅ {{ range $i, $tag := . }}{{ if $i }}, {{ end }}<a href="{{ "/tags/" | relURL }}{{ $tag | urlize }}/">{{ $tag }}</a>{{ end }}{{ end }} | <a href="{{ .Permalink }}">#{{ .File.ContentBaseName }}</a></p>
+  </footer>
+</article>

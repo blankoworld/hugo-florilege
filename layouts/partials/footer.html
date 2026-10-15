@@ -1,0 +1,9 @@
+<footer id="footer">
+  <p>{{ T "poweredBy" }} <a href="https://gohugo.io">Hugo {{ hugo.Version }}</a><br>
+  {{ T "theme" }}: <a href="https://github.com/blankoworld/hugo-florilege">Florilège</a></p>
+  {{ with site.Params.footer }}
+  <div id="special_footer">
+    {{ . | markdownify }}
+  </div>
+  {{ end }}
+</footer>

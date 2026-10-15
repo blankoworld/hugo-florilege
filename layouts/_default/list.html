@@ -1,0 +1,8 @@
+{{ define "bodyclass" }}list{{ end }}
+{{ define "main" }}
+  <h2 id="posts">{{ .Title }}</h2>
+  {{ range .Paginator.Pages }}
+    {{ partial "article-line.html" . }}
+  {{ end }}
+  {{ partial "pagination.html" . }}
+{{ end }}

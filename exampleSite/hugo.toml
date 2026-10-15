@@ -1,0 +1,39 @@
+baseURL = "http://localhost:1313/"
+locale = "en-en"
+defaultContentLanguage = "en"
+title = "Tergiversate"
+theme = "../.."
+copyright = "Olivier DOSSMANN"
+
+[pagination]
+  pagerSize = 80
+
+[params]
+  subtitle = "My thoughts"
+  author = "olivier"
+  introduction = ""
+  sidebar = ""
+  footer = ""
+  favicon = "favicon.ico"
+
+[[menus.main]]
+  name = "Thoughts"
+  url = "/posts/"
+  weight = 10
+
+[[menus.main]]
+  name = "Tags"
+  url = "/tags/"
+  weight = 20
+
+[[menus.main]]
+  name = "About"
+  url = "/about/"
+  weight = 30
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[outputs]
+  home = ["HTML", "RSS"]

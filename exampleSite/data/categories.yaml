@@ -1,0 +1,15 @@
+info:
+  label: IT
+  color: "#B52D80"
+libre:
+  label: Free & Open Source
+  color: "#00C100"
+logique:
+  label: Logic
+  color: "#2D71B5"
+normal:
+  label: Normal
+  color: "#000000"
+perso:
+  label: Personal
+  color: "#E68B0A"

@@ -1,0 +1,8 @@
+<nav id="nav" aria-label="{{ T "navigation" }}">
+  <ul>
+    <li><a href="{{ site.BaseURL }}">{{ T "home" }}</a></li>
+    {{ range site.Menus.main }}
+    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+    {{ end }}
+  </ul>
+</nav>

@@ -1,0 +1,41 @@
+[home]
+other = "Home"
+
+[quickAccess]
+other = "Quick access"
+
+[content]
+other = "Content"
+
+[navigation]
+other = "Navigation"
+
+[footer]
+other = "Footer"
+
+[posts]
+other = "Posts"
+
+[tags]
+other = "Tags"
+
+[legend]
+other = "Legend"
+
+[poweredBy]
+other = "Powered by"
+
+[theme]
+other = "Theme"
+
+[by]
+other = "by"
+
+[permalink]
+other = "permalink"
+
+[olderPosts]
+other = "Older"
+
+[newerPosts]
+other = "Newer"

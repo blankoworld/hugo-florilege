@@ -1,0 +1,41 @@
+[home]
+other = "Accueil"
+
+[quickAccess]
+other = "Accès rapides"
+
+[content]
+other = "Contenu"
+
+[navigation]
+other = "Navigation"
+
+[footer]
+other = "Pied de page"
+
+[posts]
+other = "Billets"
+
+[tags]
+other = "Mots-clés"
+
+[legend]
+other = "Légende"
+
+[poweredBy]
+other = "Propulsé par"
+
+[theme]
+other = "Le thème est"
+
+[by]
+other = "par"
+
+[permalink]
+other = "permalien"
+
+[olderPosts]
+other = "Antérieurs"
+
+[newerPosts]
+other = "Postérieurs"
